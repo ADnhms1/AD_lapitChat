@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ADchatActivity">
+
+    <include
+        android:id="@+id/chat_app_bar"
+        layout="@layout/mainappbar" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:weightSum="10"
+        app:layout_constraintBottom_toTopOf="@+id/chat_app_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/chat_Add"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/text_messageview_background"
+            android:src="@drawable/plus_new_1"></ImageButton>
+
+        <EditText
+            android:id="@+id/chat_Message_View"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toStartOf="@+id/chat_Send"
+            android:layout_toEndOf="@+id/chat_Add"
+            android:background="@drawable/text_messageview_background"
+            android:hint="Type a message"
+            android:padding="10dp" />
+
+        <ImageButton
+            android:id="@+id/chat_Send"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/text_messageview_background"
+            android:src="@drawable/send_button"></ImageButton>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messages_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="595dp"
+        android:layout_above="@id/relativeLayout"
+        android:layout_below="@+id/chat_app_bar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="@color/chatBackground" />
+
+</RelativeLayout>
